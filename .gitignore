@@ -1,0 +1,89 @@
+# Claude Code
+claude.md
+
+# Study Notes (personal learning notes)
+STUDY_NOTES.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Type checking
+.mypy_cache/
+
+# Data & Models (large files)
+data/mvtec_anomaly_detection/
+data/raw/
+models/pretrained/*.pt
+models/finetuned/*.pt
+models/exported/*.onnx
+*.pt
+*.pth
+*.onnx
+!models/.gitkeep
+
+# Ignore sample data but keep .gitkeep
+data/samples/*
+!data/samples/.gitkeep
+
+# Environment variables
+.env
+.env.local
+
+# Output images (project root only)
+/*.jpg
+/*.png
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
