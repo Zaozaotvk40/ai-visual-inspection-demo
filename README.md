@@ -120,6 +120,61 @@ python scripts/inference_demo.py --image test.jpg --device cpu
 python scripts/inference_demo.py --image test.jpg --show
 ```
 
+### フォルダ一括処理
+
+`--image` にフォルダを指定すると、フォルダ内の画像を一括処理します。
+
+**フォルダ内の全画像を処理**
+```cmd
+python scripts/inference_demo.py --image data/samples/
+```
+
+**結果画像をフォルダに保存**
+```cmd
+python scripts/inference_demo.py --image data/samples/ --output results/
+```
+出力ファイル名は `{元ファイル名}_result.jpg` 形式になります。
+
+**対応拡張子**: `.jpg`, `.jpeg`, `.png`, `.bmp`
+
+**注意事項**:
+- フォルダ処理時は `--show` オプションは無視されます
+- 終了コードは最も深刻な判定結果を返します（NG > WARNING > OK）
+
+**フォルダ処理時の出力例**
+```
+============================================================
+Visual Inspection AI Demo - Folder Mode
+============================================================
+Input folder: data/samples/metal_nut/
+Model: models/yolov8n.pt
+Use SAM: True
+Device: cuda
+------------------------------------------------------------
+Initializing pipeline...
+Pipeline initialized successfully!
+Found 23 images
+------------------------------------------------------------
+Processing: 000.png (1/23)
+  -> WARNING (1 defects, 6476.2 ms)
+Processing: 001.png (2/23)
+  -> OK (0 defects, 22.9 ms)
+...
+Processing: 008.png (9/23)
+  -> NG (1 defects, 282.3 ms)
+...
+------------------------------------------------------------
+SUMMARY
+------------------------------------------------------------
+Total: 23 images
+  OK:      19
+  WARNING: 1
+  NG:      3
+Total Time: 7.7 s
+------------------------------------------------------------
+Demo complete!
+```
+
 ### 出力例
 
 ```
